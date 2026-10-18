@@ -1,6 +1,6 @@
 export type ContactErrors = Partial<Record<"name" | "email" | "subject" | "message", string>>;
 
-export function validateContact(d: Record<string, string | undefined>): ContactErrors {
+export function validateContact(d: { name?: string; email?: string; subject?: string; message?: string }): ContactErrors {
   const e: ContactErrors = {};
   const name = d.name?.trim() ?? "";
   const email = d.email?.trim() ?? "";
